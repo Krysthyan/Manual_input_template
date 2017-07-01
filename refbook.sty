@@ -1,0 +1,117 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{postercols}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[pdftex]{graphicx}
+%\RequirePackage{color}
+\RequirePackage{todonotes}
+
+\RequirePackage[normalem]{ulem}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage[spanish]{babel}
+\RequirePackage{hyperref}
+\RequirePackage{supertabular}
+%\RequirePackage{showframe}
+\RequirePackage{fancyhdr}
+\RequirePackage[margin=1in]{geometry}
+%\RequirePackage{longtable}
+%\RequirePackage{multirow}
+%\RequirePackage[numbers, square, comma, sort&compress]{natbib}
+%\RequirePackage{multibib}
+%\RequirePackage[linewidth=1.5pt]{mdframed}
+%\RequirePackage{etoolbox}
+%\RequirePackage{paralist}
+%\RequirePackage{array,booktabs,enumitem}% http://ctan.org/pkg/{array,booktabs,enumitem}
+%\newcolumntype{P}[1]{>{\endgraf\vspace*{-\baselineskip}}p{#1}}
+%\RequirePackage{setspace}
+
+%\pagestyle{fancy}
+%\fancypagestyle{plain}
+
+%\setlength{\parskip}{2mm}
+%\setlength{\parindent}{1cm}
+%%\renewcommand{\baselinestretch}{1.5}
+
+\headsep=2cm
+\footskip=1cm
+%\topmargin=0cm
+%\headheight=0cm
+
+\fancyhf{} % clear all header and footers
+
+\fancyhead[L]{
+\includegraphics[width=1.2cm]{/home/darwin/latex/logos/logou}
+}
+
+\fancyhead[C]{
+FACULTAD DE INGENIERÍA\\
+\textsc{Escuela de Sistemas - Civil - Electrica - Electrónica}
+}
+
+\fancyhead[R]{
+%\includegraphics[width=2cm]{logo_u}
+}
+
+% \fancyfoot[L]{
+% }
+
+% \rfoot{\thepage}
+% %\fancyfoot[R]{\thepage}
+
+%\reversemarginpar % Move the margin to the left of the page
+
+%\let\MPar\marginpar
+%\renewcommand\marginpar[2][]{\MPar[\raggedleft\normalsize\textbf{#1}]{\raggedleft\normalsize\textbf{#1}}}
+
+%\newcommand{\MarginText}[1]{\reversemarginpar\marginpar{\normalsize\textbf{#1}}} % New command defining the margin text style
+
+%\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
+%\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+
+%\newcommand{\Description}[1]{\hangindent=3em\hangafter=0\noindent\raggedright{#1}\par\normalsize\vspace{1em}} % Define a command for descriptions of each entry - change spacing and font sizes here
+
+\newcommand{\todos}[2]{
+  \begin{supertabular}{p{0.25\textwidth}p{0.75\textwidth}}
+    \textbf{#1} & #2 \\
+  \end{supertabular}
+}
+
+\RequirePackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\newcommand{\funcion}[1]{
+\section{#1}
+\hrule
+\vspace{1em}
+}
+
+%\newcommand{\proposito}[1]{\Description{\MarginText{Propósito:}#1}}
+\newcommand{\proposito}[1]{\todos{Propósito:}{#1}}
+
+%\newcommand{\sintaxis}[1]{\Description{\MarginText{Sintaxis:}#1}}
+\newcommand{\sintaxis}[1]{\todos{Sintaxis:}{#1}}
+
+%\newcommand{\descripcion}[1]{\Description{\MarginText{Descripción:}#1}}
+\newcommand{\descripcion}[1]{\todos{Descripción:}{#1}}
+
+%\newcommand{\ejemplos}[1]{\Description{\MarginText{Ejemplos:}#1}}
+\newcommand{\ejemplos}[1]{\todos{Ejemplos:}{#1}}
+
+%\newcommand{\veatambien}[1]{\Description{\MarginText{Vea también:}#1}}
+\newcommand{\veatambien}[1]{\todos{Vea también:}{#1}}
+
+%\definecolor{lightgray}{gray}{0.8}
+% \newcolumntype{L}{>{\raggedleft}p{0.1225\textwidth}}
+% \newcolumntype{R}{p{0.81\textwidth}}
+% \newcolumntype{X}{>{\raggedleft}p{0.05\textwidth}}
+% \newcolumntype{Y}{p{0.9\textwidth}}
+
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+
+% \renewenvironment{supertabular}{\begin{supertabular}{L!{\VRule}R}}{%
+%      \end{supertabular}\ignorespacesafterend% as suggested above
+% }
+
+\endinput

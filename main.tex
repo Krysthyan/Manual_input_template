@@ -1,0 +1,90 @@
+% Document settings
+\documentclass[12pt]{article}
+%\usepackage{graphicx} %para poner figuras
+\usepackage{refbook}
+
+
+%\title{}
+%\date{}
+
+\begin{document}
+\title{M\'etodos Num\'ericos}
+\author{Nombre 1 - Nombre 2 - Nombre 3}
+\maketitle
+\tableofcontents
+\newpage
+
+%**********************Metodo ha ser realizado*****************
+% El siguiente metodo es uno de prueba, para tener una referencia
+% de como es la estructura del mismo.
+
+\funcion{M\'etodo de al bisecci\'on}
+
+\proposito{El M\'etodo de Bisecci\'on es un algoritmo de b\'usqueda de ra\'ices que trabaja dividiendo el intervalo a la mitad y seleccionando el subintervalo que tiene la ra\'iz.}
+
+\sintaxis{
+	\begin{description}
+  \item[Sintaxis de Funci\'on] $[c,i]=biseccion(fun,a,b,t,iter)$
+  \item[Argumentos de Entrada] \
+		\begin{description}
+		\item[$fun$:] funci\'on
+		\item[$a$:] l\'imite izquierdo del intervalo
+		\item[$b$:] l\'imite derecho del intervalo
+		\item[$t$:] tolerancia
+		\item[$iter$:] n\'umero de iteraciones
+		\end{description}
+	\item[Argumentos de Salida] \
+		\begin{description}
+		\item[$c$:] ra\'iz de la funci\'on
+		\item[$n$:] n\'umero de iteraciones
+		\end{description}
+	\end{description}
+}
+\descripcion{La funci\'on realiza el m\'etodo de bisecci\'n que es un m\'etodo iterativo en un intervalo cerrado. El m\'etodo consiste en dividir el intervalo siempre a la mitad. Si la funci\'on cambia de signo sobre un intervalo, se eval\'ua el valor de la funci\'on en el punto medio. Devuelve la ra\'iz y el error; se ingresa la funci\'on y el intervalo.}
+
+\ejemplos{La llamada a la funci\'on es as\'i: [corte,iteraciones] = biseccion($'x^2-4'$, 0, 5, 0.01, 50). La funci\'on debe devolver: [2.0020, 10], puesto que la tolerancia es 0.01.}
+
+\veatambien{
+	\begin{description}
+  \item[$Referencias$]Chapra, Métodos Numericos para Ingenieros (Capítulo 5.2).
+  \item[$Otros$ $M\'etodos$ $de$ $Cero$ $de$ $Funciones$]M\'etodo de Punto Fijo, M\'etodo de la Secante, M\'etodo de Newton Raphson, M\'etodo de Newton Raphson Modificado, M\'etodo de Horner.
+   \end{description}
+}
+%************************
+%*******************************Método de Newton Raphson*********************
+% Segundo método de ejemplo de como sigue la estructura del proyecto
+
+
+\funcion{M\'etodo Newton Raphson}
+
+\proposito{El M\'etodo de Newton Raphson se utiliza para encontrar aproximaciones de los ceros o ra\'ices de una funci\'on real, al igual que puede ser utilizado para encontrar el m\'aximo o el m\'inimo de una funci\'on, hallando los ceros de su primera derivada.}
+
+\sintaxis{
+	\begin{description}
+  \item[Sintaxis de Funci\'on] $[ xn1, iter1] = newtonRaphson(fun, x0,e,it )$
+  \item[Argumentos de Entrada] \
+		\begin{description}
+		\item[$fun$:] funci\'on
+		\item[$x0$:] punto inicial
+		\item[$e$:] nivel de toleracia permitida para el error
+		\item[$it$:] n\'umero de iteraciones
+		\end{description}
+	\item[Argumentos de Salida] \
+		\begin{description}
+		\item[$xn1$:] punto de corte o donde $f(x)=0$
+		\item[$iter1$:] n\'umero de iteraciones
+		\end{description}
+	\end{description}
+}
+\descripcion{El m\'etodo se deduce a partir de la interpretaci\'on geom\'etrica. Donde la pendiente queda expresada de la siguiente manera:$f'(x_{i})=\frac{f(x_{i})-0}{x_{1}-x_{i+1}}$, donde al arreglar la ecuaci\'on tenemos: $x_{i+1}=x_{i}-\frac{f(x_{i})}{f'(x_{i})}$}
+
+\ejemplos{La llamada a la funci\'on es as\'i: [xn1,iter1]=newtonRaphson($'cos(x)-x'$, 5, 0.001, 50). La funci\'on debe devolver: 0.739, con un n\'umero de iteraciones realizadas $it=18$}
+
+\veatambien{
+	\begin{description}
+  \item[$Referencias$]Chapra, M\'etodos Num\'ericos para Ingenieros (Cap\'itulo 5.2).
+  \item[$Otros$ $M\'etodos$ $de$ $Cero$ $de$ $Funciones$]M\'etodo de Punto Fijo, M\'etodo de Bisecci\'on, M\'etodo de la Secante, M\'etodo de Newton Raphson Modificado, M\'etodo de Horner.
+   \end{description}
+}
+
+\end{document}
